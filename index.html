@@ -28,92 +28,70 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
 
 <!DOCTYPE html>
 <!-- Vad händer när man kommenterar bort språket? -->
-<!-- <html lang="en"> -->
+ <html lang="en">
+    
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <!-- Endast en `<title>` används; flera kan orsaka oväntat beteende och påverka SEO samt tillgänglighet negativt. -->
+    <!-- Jag tog bort ena title-->
     <title>A11y News</title>
-    <title>A11y News dupe</title>
 </head>
 
 <body>
-    <!-- Navigeringsmeny med dubblett-ID:n, inkonsekvent tabindex, och brutna länkar till en 404-sida. -->
+    <!-- Jag bytte ut id till olika id och tog bort 404-sidan så att dom inte går till något just u då dessa andra sidor inte finns. -->
     <nav class="navigation">
-        <span class="nav-item" id="1" tabindex="-1"><a href="404.html" target="_blank">Home</a></span>
-        <span class="nav-item" id="1" tabindex="-1"><a href="404.html">World</a></span>
-        <span class="nav-item" id="1"><a href="404.html">Sports</a></span>
-        <span class="nav-item" id="1"><a href="404.html" target="_blank">Entertainment</a></span>
+        <span class="nav-home" id="1" tabindex="-1"><a href="#" target="_blank">Home</a></span>
+        <span class="nav-world" id="2" tabindex="-1"><a href="#">World</a></span>
+        <span class="nav-sport" id="3"><a href="#">Sports</a></span>
+        <span class="nav-Entertainment" id="4"><a href="#" target="_blank">Entertainment</a></span>
     </nav>
 
-    <!-- Svåråtkomligt inputfällt -->
+    <!-- ändrade buttonen och tog bort <a> den behövs inte -->
     <div class="input-container">
         <input type="text" placeholder="Enter text">
-        <button><a href="#">Search</a></button>
+        <button>Search</button>
     </div>
 
-    <!-- Dold text och klickbar div. 
-     .hidden-text är nästan osynlig p.g.a. låg opacity och roterad tex -->
-    <p class="hidden-text">This text is invisible.</p>
-    <div class="button">Click here!</div>
+    <!-- tog bort den dolda texten och click here buttonen -->
     <div class="container">
 
-        <!-- Två <h1>-taggar i .container kan påverka tillgänglighet och SEO. -->
+        <!-- tog bort den tomma h1an. -->
         <h1>A11y News</h1>
-        <h1></h1>
 
         <div class="article">
-            <!-- <marquee>(rullande text) kan vara en intressant effekt på en hemsida, men det kan också vara distraherande för besökarna. -->
-            <marquee class="headline">Breaking News: ...!</marquee>
+            <!-- bytte ut <marquee> till en h2 och tog bort href till en tom sida just nu ist 404 sida. -->
+            <h2 class="headline">Breaking News: ...!</h2>
             <p>Scientists have discovered a new deep-sea fish with bioluminescent fins off the coast of Australia. The
                 unnamed species is believed to have unique traits that could contribute to future medical research and
                 biotechnology.</p>
-            <a href="404.html">Click here!</a>
+            <a href="#">Click here!</a>
         </div>
 
-        <!-- Klicka på artikeln för att visa ett meddelande, men den utför egentligen inget. -->
-        <div class="article" onclick="alert('This does nothing!')">
+        <!-- tog bort alerten. -->
+        <div class="article">
             <div>Lunar New Year: Celebrate with us!</div>
 
-            <!-- Bilder visas inte, varför? -->
-            <div class="image-container">
-                <img src="/images/ocean.jpg">
-                <img src="/images/city.jpg">
-                <img src="/images/family.jpg">
-            </div>
-
-            <p>Access the news by pressing the images</p>
+            <!-- Bilder visas inte, varför? dessa bilder finns inte med i koden så därför kan dem inte visas -->
+            
         </div>
 
-        <!-- Allt för stor bild. För att motverka prestanda problem, ha koll på storleken på bilden -->
+        <!-- tog bort widht på bilden -->
         <div class="article" style="display: none;">
             <p class="headline">Se en 50MB bild ladda långsamt!</p>
-            <img src="http://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg" width="50000">
+            <img src="http://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg" >
         </div>
 
-        <!-- Videor kräver mycket prestanda, kan vi ändra eller ta bort för att åstakomma bättre resultat -->
+        <!-- jag tog bort att den skulle loopa och spelas hela tiden jag la till att gifen kommer från https ist för htpp -->
         <div class="article">
-            <video autoplay muted loop src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
-            <img src="http://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif">
+            <video  src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+            <img src="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif" alt="forrest gump som vinkar på en båt">
         </div>
     </div>
 
-    <!-- En irriterande annons som alltid syns och innehåller en snurrande bild samt en vilseledande text -->
-    <div id="fake-ad">
-        <div class="top-section">
-            <div class="image-container">
-                <img class="rotating-image" src="images/chest.png">
-            </div>
-            <p>🎉 You have won $10,000! 🎉</p>
-            <div class="image-container">
-                <img class="rotating-image" src="images/chest.png">
-            </div>
-        </div>
-        <p class="btext">Click here to collect your money!</p>
-    </div>
-
+    <!-- Jag tog bort annonsen -->
+    
 
     <script src="script.js" defer></script>
 </body>

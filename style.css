@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; /* Tungläst typsnitt */
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* bytte typsnitt */
 }
 
 /* Ställer in bakgrundsfärg, textfärg och textstil för hela sidan */
@@ -31,17 +31,12 @@ a {
   font-size: 50px;
   padding: 20px;
   border: 5px dashed black;
-  cursor: not-allowed;
+  cursor: pointer;
   text-transform: uppercase;
 }
 
-/* Nästan osynlig text, spegelvänd */
-.hidden-text {
-  display: block;
-  opacity: 0.1;
-  font-size: 50px;
-  transform: rotate(180deg);
-}
+/* Nästan osynlig text, tog bort denna text */
+
 
 /* En behållare med mittjusterad text och en blå transparent bakgrund */
 .container {
@@ -52,20 +47,19 @@ a {
   text-align: center;
 }
 
-/* Artikel med prickad orange linje och en radial gradient som bakgrund */
+/* tog bort den oranga linjen */
 .article {
-  border-bottom: 10px dotted orange;
   margin-bottom: 50px;
   padding-bottom: 50px;
   background: radial-gradient(circle, black, transparent);
 }
 
-/* Rubrik med stor text och mörkröd färg, justerad till höger */
+/* Rubrik med stor text och mörkröd färg, ändrade den till att bli centrerad */
 .headline {
   font-size: 80px;
   font-weight: lighter;
   color: #8d0801;
-  text-align: right;
+  text-align: center;
   margin: 50px;
   padding: 20px;
 }
@@ -87,81 +81,41 @@ a {
   text-decoration: none;
 }
 
-/* Bakgrundsfärg vid hover på navigationslänkar */
-.navigation .nav-item:hover a {
-  background-color: #acacac40;
-}
+/* Bakgrundsfärg vid hover på navigationslänkar tog bort detta*/
 
-/* Bilderna placeras i en rad, centrerar dem horisontellt och vertikalt och lägger till ett mellanrum mellan bilderna */
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
 
-/* Definierar storleken på bilderna och gör att de täcker det angivna utrymmet utan att bli förvrängda  */
-.image-container img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-}
+/* Bilderna placeras i en rad, jag tog bort dessa bilder då dom inte fanns med  koden */
+
 
 /* Input-fält i en container med kolumnlayout och flytande positionering */
 .input-container {
   display: flex;
-  flex-direction: column;
-  float: right;
-  width: 50%;
-  background: #ffffff00; /* Genomskinlig bakgrund */
+  place-content: end;
 }
 
 /* Inputfält med röd text och svart ram */
 .input-container input {
-  font-size: 30px;
-  padding: 20px;
-  text-align: right;
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
   border: 5px solid black;
   background-color: rgb(255, 255, 255);
   color: red;
 }
 
-/* Knapp med rosa kant, mörkröd bakgrund och roterad */
+/* tog bort att den var roterad och ändrade till pointer */
 .input-container button {
-  border: 10px ridge pink;
   background-color: darkred;
   color: white;
-  font-size: 40px;
-  padding: 30px;
-  cursor: crosshair;
-  transform: rotate(-10deg);
-}
-
-/* En knapp med blå bakgrund och vit text */
-.button {
-  display: inline-block;
-  padding: 10px;
-  background-color: blue;
-  color: white;
+  font-size: 20px;
+  padding: 20px;
   cursor: pointer;
 }
 
-/* En "fake ad" med blinkande bakgrund och fast position längst ner */
-#fake-ad {
-  position: fixed;
-  bottom: 0;
-  width: 40%;
-  background: repeating-radial-gradient(circle, cyan, magenta 10%, yellow 20%);
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
+
+
+/* jag tog bort annonsen */
+
 
 /* Sektion med centrerad layout */
 .top-section {
@@ -170,37 +124,10 @@ a {
   justify-content: center;
 }
 
-/* Text med en hover-effekt som drastiskt krymper storleken */
+/* Text med en tog bort att den skulle minska storleken på texten */
 .btext {
   font-size: 18px;
   padding: 10px 15px;
   margin-top: 10px;
   font-weight: bold;
-  transition: transform 0.5s ease-in-out, font-size 0.5s ease-in-out,
-    padding 0.5s ease-in-out;
-}
-
-/* På hover minskas texten kraftigt, nästan osynlig */
-.btext:hover {
-  transform: scale(0.1);
-  font-size: 1px;
-  padding: 1px;
-}
-
-/* Bild som roterar mellan -45 och 45 grader */
-.rotating-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: rotateLeftRight 2s infinite alternate ease-in-out;
-}
-
-/* Nyckelbildning för att rotera bilden åt vänster och höger */
-@keyframes rotateLeftRight {
-  0% {
-    transform: rotate(-45deg);
-  }
-  100% {
-    transform: rotate(45deg);
-  }
 }
